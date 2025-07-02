@@ -23,6 +23,13 @@ class StudentController extends Controller
     // Handle create form POST
     public function store(Request $request)
     {
+        // validate
+        $request->validate([ 
+            'name' =>'required|string|max:150|',
+            'gender' =>'required|string|',
+            'age' => 'required|integer',
+            'is_delete'=>'boolean',
+        ]);
         Student::create([
             'name' => $request->name,
             'gender' => $request->gender,
@@ -43,6 +50,13 @@ class StudentController extends Controller
     // Handle update submission
     public function update(Request $request, $id)
     {
+        // validate
+        $request->validate([
+            'name' => 'required|string|max:150',
+            'gender' => 'required|string',
+            'age' => 'required|integer',
+        ]);
+
         $student = Student::findOrFail($id);
 
         $student->update([
