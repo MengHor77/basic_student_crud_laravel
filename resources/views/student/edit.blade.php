@@ -14,21 +14,30 @@
         @csrf
         @method('PUT')
 
+        <!-- Name -->
         <div class="mb-4">
             <label for="name" class="block text-gray-700 mb-1">Name</label>
             <input type="text" name="name" id="name" value="{{ $student->name }}" class="w-full border border-gray-300 rounded px-3 py-2" required />
         </div>
 
+        <!-- Gender -->
         <div class="mb-4">
             <label for="gender" class="block text-gray-700 mb-1">Gender</label>
-            <input type="text" name="gender" id="gender" value="{{ $student->gender }}" class="w-full border border-gray-300 rounded px-3 py-2" required />
+            <select name="gender" id="gender" class="w-full border border-gray-300 rounded px-3 py-2" required>
+                <option value="">-- Select Gender --</option>
+                <option value="male" {{ $student->gender == 'male' ? 'selected' : '' }}>Male</option>
+                <option value="female" {{ $student->gender == 'female' ? 'selected' : '' }}>Female</option>
+                <option value="other" {{ $student->gender == 'other' ? 'selected' : '' }}>Other</option>
+            </select>
         </div>
 
+        <!-- Age -->
         <div class="mb-4">
             <label for="age" class="block text-gray-700 mb-1">Age</label>
             <input type="number" name="age" id="age" value="{{ $student->age }}" class="w-full border border-gray-300 rounded px-3 py-2" required />
         </div>
 
+        <!-- Submit -->
         <div class="text-center">
             <button type="submit" class="bg-indigo-600 text-white px-4 py-2 rounded hover:bg-indigo-700">
                 Update Student
