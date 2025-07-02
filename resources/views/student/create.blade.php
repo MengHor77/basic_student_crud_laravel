@@ -23,16 +23,16 @@
             </div>
 
             <!-- Gender Select -->
-        <div class="mb-4">
-    <label for="gender" class="block text-gray-700 mb-1">Gender</label>
- <select name="gender" id="gender" class="w-full border border-gray-300 rounded px-3 py-2" required>
-    <option value="">-- Select Gender --</option>
-    <option value="male" {{ old('gender') == 'male' ? 'selected' : '' }}>Male</option>
-    <option value="female" {{ old('gender') == 'female' ? 'selected' : '' }}>Female</option>
-    <option value="other" {{ old('gender') == 'other' ? 'selected' : '' }}>Other</option>
-</select>
+            <div class="mb-4">
+                <label for="gender" class="block text-gray-700 mb-1">Gender</label>
+                <select name="gender" id="gender" class="w-full border border-gray-300 rounded px-3 py-2" required>
+                    <option value="">-- Select Gender --</option>
+                    <option value="male" {{ old('gender') == 'male' ? 'selected' : '' }}>Male</option>
+                    <option value="female" {{ old('gender') == 'female' ? 'selected' : '' }}>Female</option>
+                    <option value="other" {{ old('gender') == 'other' ? 'selected' : '' }}>Other</option>
+                </select>
 
-</div>
+            </div>
 
 
             <div class="mb-4">
@@ -44,12 +44,12 @@
 
 
             <div class="flex justify-between">
-                <div  class="bg-indigo-600 text-white px-4 py-2 rounded hover:bg-indigo-700">
-                    <a href="/student"
-                      ><-Back to 
-                        student list</a>
+                <div class="bg-indigo-600 text-white px-4 py-2 rounded hover:bg-indigo-700">
+                    <a href="/student">
+                        <-Back to student list</a>
                 </div>
-                <button type="submit" class=" bg-indigo-600 text-white px-4 py-2 rounded hover:bg-indigo-700">submit</button>
+                <button type="submit"
+                    class=" bg-indigo-600 text-white px-4 py-2 rounded hover:bg-indigo-700">submit</button>
             </div>
         </form>
     </div>

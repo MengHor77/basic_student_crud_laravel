@@ -43,15 +43,14 @@
 
             <!-- Submit -->
             <div class="flex justify-between">
-                <div  class="bg-indigo-600 text-white px-4 py-2 rounded hover:bg-indigo-700">
-                    <a href="/student"
-                      ><-Back to 
-                        student List</a>
+                <div class="bg-indigo-600 text-white px-4 py-2 rounded hover:bg-indigo-700">
+                    <a href="/student">
+                        <-Back to student List</a>
                 </div>
-                <div  class="bg-indigo-600 text-white px-4 py-2 rounded hover:bg-indigo-700">
+                <div class="bg-indigo-600 text-white px-4 py-2 rounded hover:bg-indigo-700">
                     <button type="submit">
-                    Update Student
-                </button>
+                        Update Student
+                    </button>
                 </div>
             </div>
         </form>
