@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('name');
             $table->string('gender');
             $table->integer('age');
-            $table->boolean('is_delete')->default(1);
+            $table->boolean('is_delete')->default(0);
             $table->timestamps();
 
         });

@@ -10,38 +10,38 @@ class StudentController extends Controller
     // Show all active students
     public function index()
     {
-        $students = Student::where('is_delete', 1)->get();
+        $students = Student::where('is_delete', 0)->get();
         return view('student.index', compact('students'));
     }
 
     // Show create form
-    public function createStudent()
+    public function create()
     {
         return view('student.create');
     }
 
     // Handle create form POST
-    public function storeStudent(Request $request)
+    public function store(Request $request)
     {
         Student::create([
             'name' => $request->name,
             'gender' => $request->gender,
             'age' => $request->age,
-            'is_delete' => 1,
+            'is_delete' => 0,
         ]);
 
         return redirect('/student')->with('success', 'Student created successfully!');
     }
 
     // Show edit form
-    public function editStudent($id)
+    public function edit($id)
     {
         $student = Student::findOrFail($id);
         return view('student.edit', compact('student'));
     }
 
     // Handle update submission
-    public function submitUpdate(Request $request, $id)
+    public function update(Request $request, $id)
     {
         $student = Student::findOrFail($id);
 
@@ -55,10 +55,10 @@ class StudentController extends Controller
     }
 
     // Soft delete student
-    public function deleteStudent($id)
+    public function destroy($id)
     {
         $student = Student::findOrFail($id);
-        $student->update(['is_delete' => 0]);
+        $student->update(['is_delete' => 1]);
 
         return redirect('/student')->with('success', "Student with ID $id deleted (soft).");
     }
