@@ -43,9 +43,13 @@
 
 
 
-            <div class="flex justify-end">
-                <button type="submit"
-                    class=" bg-indigo-600 text-white px-4 py-2 rounded hover:bg-indigo-700">sunmit</button>
+            <div class="flex justify-between">
+                <div  class="bg-indigo-600 text-white px-4 py-2 rounded hover:bg-indigo-700">
+                    <a href="/student"
+                      >Back to 
+                        student list</a>
+                </div>
+                <button type="submit" class=" bg-indigo-600 text-white px-4 py-2 rounded hover:bg-indigo-700">sunmit</button>
             </div>
         </form>
     </div>
