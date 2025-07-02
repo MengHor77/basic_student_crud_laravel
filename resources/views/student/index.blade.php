@@ -38,11 +38,11 @@
                     <td class="border px-4 py-2">{{ $student->gender }}</td>
                     <td class="border px-4 py-2">{{ $student->age }}</td>
                     <td class="border px-4 py-2">
-                        <a href="/edit-student/{{ $student->id }}" class="text-blue-500 hover:underline mr-3">Edit</a>
+                        <a href="/edit-student/{{ $student->id }}" class="text-white hover:underline mr-3 bg-gray-500 px-3 rounded-md">Edit</a>
                         <form action="/delete-student/{{ $student->id }}" method="POST" class="inline" onsubmit="return confirm('Are you sure?');">
                             @csrf
                             @method('DELETE')
-                            <button type="submit" class="text-red-600 hover:underline">Delete</button>
+                            <button type="submit" class="text-white hover:underline bg-red-500 px-3 rounded-md">Delete</button>
                         </form>
                     </td>
                 </tr>
