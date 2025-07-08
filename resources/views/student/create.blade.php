@@ -49,7 +49,7 @@
                         <-Back to student list</a>
                 </div>
                 <button type="submit"
-                    class=" bg-indigo-600 text-white px-4 py-2 rounded hover:bg-indigo-700">submit</button>
+                    class=" bg-indigo-600 text-white px-4 py-2 rounded hover:bg-indigo-700">Submit</button>
             </div>
         </form>
     </div>
