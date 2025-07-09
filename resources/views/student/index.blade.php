@@ -19,7 +19,7 @@
         @endif
 
         <div class="mb-6 text-right">
-            <a href="/create-student" class="bg-indigo-600 text-white px-4 py-2 rounded hover:bg-indigo-700">+ Add
+            <a href="/student/create-student" class="bg-indigo-600 text-white px-4 py-2 rounded hover:bg-indigo-700">+ Add
                 Student</a>
         </div>
 
@@ -41,9 +41,9 @@
                     <td class="border px-4 py-2">{{ $student->gender }}</td>
                     <td class="border px-4 py-2">{{ $student->age }}</td>
                     <td class="border px-4 py-2">
-                        <a href="/edit-student/{{ $student->id }}"
+                        <a href="/student/edit-student/{{ $student->id }}"
                             class="text-white hover:underline mr-3 bg-gray-500 px-3 rounded-md">Edit</a>
-                        <form action="/delete-student/{{ $student->id }}" method="POST" class="inline"
+                        <form action="/student/delete-student/{{ $student->id }}" method="POST" class="inline"
                             onsubmit="return confirm('Are you sure?');">
                             @csrf
                             @method('DELETE')

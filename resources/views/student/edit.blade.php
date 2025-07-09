@@ -12,7 +12,7 @@
     <div class="max-w-md mx-auto bg-white p-6 rounded shadow-md">
         <h2 class="text-2xl font-bold mb-6 text-indigo-600 text-center">Edit Student</h2>
 
-        <form action="/update-student/{{ $student->id }}" method="POST">
+        <form action="/student/update-student/{{ $student->id }}" method="POST">
             @csrf
             @method('PUT')
 

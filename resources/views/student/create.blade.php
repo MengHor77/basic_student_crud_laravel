@@ -12,7 +12,7 @@
     <div class="max-w-md mx-auto bg-white p-6 rounded shadow-md">
         <h2 class="text-2xl font-bold mb-6 text-center text-indigo-600">Create Student Form</h2>
 
-        <form action="/create-student" method="POST">
+        <form action="/student/create-student" method="POST">
             @csrf
             <!-- Laravel CSRF Token -->
 

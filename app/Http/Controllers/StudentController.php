@@ -76,4 +76,6 @@ class StudentController extends Controller
 
         return redirect('/student')->with('success', "Student with ID $id deleted (soft).");
     }
+    public function delete (){
+    }
 }
