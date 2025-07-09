@@ -7,7 +7,9 @@
     <p><strong>Age:</strong> {{ $student->age }}</p>
 
     <div class="mt-4">
-        <a href="{{ route('admin.students.index') }}" class="bg-gray-300 px-4 py-2 rounded">Back</a>
+        <a href="{{ route('admin.students.index') }}" class="bg-gray-300 px-4 py-2 rounded hover:bg-gray-400">
+            Back
+        </a>
     </div>
 </div>
 @endsection

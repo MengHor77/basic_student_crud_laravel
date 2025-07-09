@@ -5,14 +5,14 @@
     <h2 class="text-2xl font-bold mb-6 text-center text-indigo-600">Edit Student</h2>
 
     @if ($errors->any())
-        <div class="mb-4 bg-red-100 border border-red-400 text-red-700 p-3 rounded">
-            <strong>Whoops!</strong> There were some problems with your input.
-            <ul class="mt-2 list-disc list-inside">
-                @foreach ($errors->all() as $error)
-                    <li>{{ $error }}</li>
-                @endforeach
-            </ul>
-        </div>
+    <div class="mb-4 bg-red-100 border border-red-400 text-red-700 p-3 rounded">
+        <strong>Whoops!</strong> There were some problems with your input.
+        <ul class="mt-2 list-disc list-inside">
+            @foreach ($errors->all() as $error)
+            <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
     @endif
 
     <form action="{{ route('admin.students.update', $student->id) }}" method="POST">
@@ -31,7 +31,8 @@
                 class="w-full border px-3 py-2 rounded focus:outline-none focus:ring-2 focus:ring-indigo-500" required>
                 <option value="">-- Select Gender --</option>
                 <option value="male" {{ old('gender', $student->gender) == 'male' ? 'selected' : '' }}>Male</option>
-                <option value="female" {{ old('gender', $student->gender) == 'female' ? 'selected' : '' }}>Female</option>
+                <option value="female" {{ old('gender', $student->gender) == 'female' ? 'selected' : '' }}>Female
+                </option>
                 <option value="other" {{ old('gender', $student->gender) == 'other' ? 'selected' : '' }}>Other</option>
             </select>
         </div>

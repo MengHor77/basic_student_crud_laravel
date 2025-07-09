@@ -5,14 +5,14 @@
     <h2 class="text-2xl font-bold mb-6 text-center text-indigo-600">Create Student</h2>
 
     @if ($errors->any())
-        <div class="mb-4 bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded">
-            <strong>Whoops!</strong> Please fix the following errors:
-            <ul class="mt-2 list-disc list-inside">
-                @foreach ($errors->all() as $error)
-                <li>{{ $error }}</li>
-                @endforeach
-            </ul>
-        </div>
+    <div class="mb-4 bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded">
+        <strong>Whoops!</strong> Please fix the following errors:
+        <ul class="mt-2 list-disc list-inside">
+            @foreach ($errors->all() as $error)
+            <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
     @endif
 
     <form method="POST" action="{{ route('admin.students.store') }}">
@@ -41,7 +41,8 @@
         </div>
 
         <div class="flex justify-between">
-            <a href="{{ route('admin.students.index') }}" class="bg-gray-300 text-black px-4 py-2 rounded hover:bg-gray-400">Back</a>
+            <a href="{{ route('admin.students.index') }}"
+                class="bg-gray-300 text-black px-4 py-2 rounded hover:bg-gray-400">Back</a>
             <button type="submit" class="bg-indigo-600 text-white px-4 py-2 rounded hover:bg-indigo-700">Save</button>
         </div>
     </form>
