@@ -16,7 +16,7 @@
     <table class="w-full table-auto border-collapse border border-gray-300">
         <thead class="bg-gray-200">
             <tr>
-                <th class="border px-4 py-2">#</th>
+                <th class="border px-4 py-2">No</th>
                 <th class="border px-4 py-2">Name</th>
                 <th class="border px-4 py-2">Gender</th>
                 <th class="border px-4 py-2">Age</th>
