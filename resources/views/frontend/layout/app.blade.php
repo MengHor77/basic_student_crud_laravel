@@ -11,7 +11,7 @@
     <!-- Header -->
     <header class="bg-indigo-600 text-white p-4">
         <div class="container mx-auto">
-            <h1 class="text-2xl font-bold">Welcome to student management!</h1>
+            <h1 class="text-2xl font-bold">Welcome to School management!</h1>
         </div>
     </header>
 
