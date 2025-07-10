@@ -53,14 +53,11 @@ Route::prefix('admin')->name('admin.')->middleware(['auth:admin'])->group(functi
     Route::resource('users', UserController::class);
     Route::resource('students', StudentController::class);
     Route::resource('courses', CourseController::class);
+    Route::resource('teachers', TeacherController::class);
 
-    // Teachers (custom, you can expand)
-    Route::prefix('teachers')->name('teachers.')->group(function () {
-        Route::get('/', [TeacherController::class, 'index'])->name('index');
-    });
+    Route::resource('settings', SettingController::class);
+    Route::resource('reports', ReportController::class);
+    Route::resource('schedule', ScheduleController::class);
 
-    // Others
-    Route::get('/schedule', [ScheduleController::class, 'index'])->name('schedule.index');
-    Route::get('/reports', [ReportController::class, 'index'])->name('reports.index');
-    Route::get('/settings', [SettingController::class, 'index'])->name('settings.index');
+
 });

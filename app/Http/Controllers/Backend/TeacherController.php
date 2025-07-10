@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
+use App\Models\Teacher;  // Assuming you have a Teacher model
 use Illuminate\Http\Request;
 
 class TeacherController extends Controller
@@ -12,13 +13,8 @@ class TeacherController extends Controller
      */
     public function index()
     {
-    
-        // Example: fetch courses if you're using a model
-        // $courses = Course::all();
-        // return view('backend.courses.index', compact('courses'));
-
-        return view('backend.teachers.index');
-    
+        $teachers = Teacher::all();  // Fetch all teachers
+        return view('backend.teachers.index', compact('teachers'));
     }
 
     /**
@@ -26,7 +22,7 @@ class TeacherController extends Controller
      */
     public function create()
     {
-        //
+        return view('backend.teachers.create');
     }
 
     /**
@@ -34,7 +30,18 @@ class TeacherController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'name' => 'required|string|max:255',
+            'email' => 'required|email|unique:teachers,email',
+            'phone' => 'nullable|string|max:20',
+            'subject' => 'nullable|string|max:255',
+            'address' => 'nullable|string',
+            'is_active' => 'required|boolean',
+        ]);
+
+        Teacher::create($request->all());
+
+        return redirect()->route('admin.teachers.index')->with('success', 'Teacher created successfully.');
     }
 
     /**
@@ -42,7 +49,8 @@ class TeacherController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $teacher = Teacher::findOrFail($id);
+        return view('backend.teachers.show', compact('teacher'));
     }
 
     /**
@@ -50,7 +58,8 @@ class TeacherController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $teacher = Teacher::findOrFail($id);
+        return view('backend.teachers.edit', compact('teacher'));
     }
 
     /**
@@ -58,7 +67,20 @@ class TeacherController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $teacher = Teacher::findOrFail($id);
+
+        $request->validate([
+            'name' => 'required|string|max:255',
+            'email' => 'required|email|unique:teachers,email,' . $teacher->id,
+            'phone' => 'nullable|string|max:20',
+            'subject' => 'nullable|string|max:255',
+            'address' => 'nullable|string',
+            'is_active' => 'required|boolean',
+        ]);
+
+        $teacher->update($request->all());
+
+        return redirect()->route('admin.teachers.index')->with('success', 'Teacher updated successfully.');
     }
 
     /**
@@ -66,6 +88,9 @@ class TeacherController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $teacher = Teacher::findOrFail($id);
+        $teacher->delete();
+
+        return redirect()->route('admin.teachers.index')->with('success', 'Teacher deleted successfully.');
     }
 }
